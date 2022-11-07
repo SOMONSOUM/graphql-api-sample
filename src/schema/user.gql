@@ -1,0 +1,33 @@
+extend type Query {
+  adminListUser: UserList
+  userDetail(id: Int!): User
+}
+
+extend type Mutation {
+  adminCreateUser(input: UserInput): Boolean
+  adminRemoveUser(id: Int!): Boolean
+  adminUpdateUser(id: Int!, input: UserInput): Boolean
+}
+
+type User {
+  id: Int
+  fullname: String
+  username: String
+  email: String
+  phoneNumber: String
+  profilePicture: String
+  roleName: String
+}
+
+input UserInput {
+  fullname: String
+  username: String
+  password: String
+  email: String
+  phoneNumber: String
+  profilePicture: String
+}
+
+type UserList {
+  data: [User]
+}

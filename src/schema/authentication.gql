@@ -1,0 +1,29 @@
+extend type Query {
+  adminMe(token: String!): Me
+}
+
+extend type Mutation {
+  signIn(input: SignInInput): Token
+  signOut(token: String!): Boolean
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+type Me {
+  id: Int
+  email: String
+  username: String
+  fullname: String
+  phoneNumber: String
+  profilePicture: String
+  roleId: Int
+  roleName: String
+  roleAccess: RoleAccess
+}
+
+type Token {
+  token: String
+}

@@ -1,0 +1,13 @@
+type Role {
+  id: Int
+  name: String
+  status: Boolean
+  access: RoleAccess
+}
+
+type RoleAccess {
+  read: Boolean
+  write: Boolean
+  modify: Boolean
+  remove: Boolean
+}
